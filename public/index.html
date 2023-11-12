@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+
+  <link rel="stylesheet" href="../src/img/favicon.png" rel="icon" type="image/png">
+  <meta name="viewport" content="wwidth=device-width, initial-scale=1" />
+  <meta name="description" content="Instello - Sharing Photos platform HTML Template" />
+  <!-- <meta name="description" content="Web site created using create-react-app" /> -->
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/uikit.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tailwind.css">
+
+  <title>Instello Sharing Photos</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <script>
+
+    (function (window, document, undefined) {
+      'use strict';
+      if (!('localStorage' in window)) return;
+      var nightMode = localStorage.getItem('gmtNightMode');
+      if (nightMode) {
+        document.documentElement.className += ' dark';
+      }
+    })(window, document);
+
+
+    (function (window, document, undefined) {
+
+      'use strict';
+
+      // Feature test
+      if (!('localStorage' in window)) return;
+
+      // Get our newly insert toggle
+      var nightMode = document.querySelector('#night-mode');
+      if (!nightMode) return;
+
+      // When clicked, toggle night mode on or off
+      nightMode.addEventListener('click', function (event) {
+        event.preventDefault();
+        document.documentElement.classList.toggle('dark');
+        if (document.documentElement.classList.contains('dark')) {
+          localStorage.setItem('gmtNightMode', true);
+          return;
+        }
+        localStorage.removeItem('gmtNightMode');
+      }, false);
+
+    })(window, document);
+  </script>
+  <script src="js/tippy.all.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <script src="js/uikit.js"></script>
+  <script src="js/simplebar.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+  <script src="https://kit.fontawesome.com/d76182a151.js" crossorigin="anonymous"></script>
+
+
+  
+
+</body>
+
+</html>
